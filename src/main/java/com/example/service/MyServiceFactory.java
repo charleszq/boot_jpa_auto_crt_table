@@ -9,13 +9,11 @@ import org.apache.olingo.odata2.api.processor.ODataSingleProcessor;
 
 public class MyServiceFactory extends ODataServiceFactory {
 
-  @Override
-  public ODataService createService(ODataContext ctx) throws ODataException {
+    @Override
+    public ODataService createService(ODataContext ctx) throws ODataException {
 
-    EdmProvider edmProvider = new MyEdmProvider();
-
-    ODataSingleProcessor singleProcessor = new MyODataSingleProcessor();
-
-    return createODataSingleProcessorService(edmProvider, singleProcessor);
-  }
+        EdmProvider edmProvider = new MyEdmProvider();
+        ODataSingleProcessor singleProcessor = new MyODataSingleProcessor();
+        return createODataSingleProcessorService(edmProvider, singleProcessor);
+    }
 }
