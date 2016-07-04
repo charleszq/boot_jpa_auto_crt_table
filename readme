@@ -1,0 +1,9 @@
+Spring Boot Olingo2 Sample Project
+
+1, mvn clean package
+2, java -jar target/boot_jpa_auto_crt_table-0.0.1-SNAPSHOT.war
+
+TODO:
+
+1, JPA integration;
+2, Make SampleController work as before
