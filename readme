@@ -1,6 +1,6 @@
 Spring Boot Olingo2 Sample Project
 
-Learning Points:
+<b>Learning Points:<b>
 1, install spring cli
 2, sping init -ddata-rest, data-jpa, mysql <project_name>
 3, change package from 'jar' to 'war';
@@ -11,14 +11,14 @@ Learning Points:
 8, from the web.xml, get the information of the servlet, configure it using the spring boot way, please see 'DemoApplication' for detail;
 9, one of the package name of 'my-car-service' needs to be changed to the package name of this project;
 
-Run the application
+<b>Run the application</b>
 
 1, mvn clean package
 2, java -jar target/boot_jpa_auto_crt_table-0.0.1-SNAPSHOT.war
 3, http://localhost:8080/sampleodata2/$metadata
 4, http://localhost:8080/sampleodata2
 
-TODO:
+<b>TODO:</b>
 
 1, JPA integration;
 2, Make SampleController work as before
