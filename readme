@@ -2,6 +2,8 @@ Spring Boot Olingo2 Sample Project
 
 1, mvn clean package
 2, java -jar target/boot_jpa_auto_crt_table-0.0.1-SNAPSHOT.war
+3, http://localhost:8080/sampleodata2/$metadata
+4, http://localhost:8080/sampleodata2
 
 TODO:
 
