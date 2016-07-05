@@ -14,11 +14,12 @@ Learning Points:
 
 Run the application
 
-1, mvn clean package
+1, mvn clean package, tested on maven version 3.3.9, (3.3.3 has problems compiling the project)
 2, java -jar target/boot_jpa_auto_crt_table-0.0.1-SNAPSHOT.war
 3, http://localhost:8080/sampleodata2/$metadata
 4, http://localhost:8080/sampleodata2
 5, http://localhost:8080/rest/users to get the user list
+6, http://localhost:8080/rest/users (POST, contentType=application/json, { "name": "Charles", "password": "pwd" } to create user)
 
 TODO:
 

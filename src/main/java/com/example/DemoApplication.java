@@ -48,6 +48,7 @@ public class DemoApplication extends SpringBootServletInitializer {
     @Bean
     public ServletRegistrationBean springDispatcherServletRegistration() {
         ServletRegistrationBean springServletBean = new ServletRegistrationBean(springDispatcherServlet(), "/rest/*");
+        springServletBean.setLoadOnStartup(1);
         return springServletBean;
     }
 }
