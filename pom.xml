@@ -23,6 +23,7 @@
         <java.version>1.8</java.version>
         <version.apache.cxf>3.1.6</version.apache.cxf>
         <version.olingo>1.0.0</version.olingo>
+        <version.olingo.jpa>2.0.6</version.olingo.jpa>
     </properties>
 
     <dependencies>
@@ -46,12 +47,20 @@
             <artifactId>olingo-odata2-core-incubating</artifactId>
             <version>${version.olingo}</version>
         </dependency>
-
-        <!-- CXF -->
         <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-frontend-jaxrs</artifactId>
-            <version>${version.apache.cxf}</version>
+            <groupId>org.apache.olingo</groupId>
+            <artifactId>olingo-odata2-jpa-processor-api</artifactId>
+            <version>${version.olingo.jpa}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.olingo</groupId>
+            <artifactId>olingo-odata2-jpa-processor-core</artifactId>
+            <version>${version.olingo.jpa}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.olingo</groupId>
+            <artifactId>olingo-odata2-jpa-processor-ref</artifactId>
+            <version>${version.olingo.jpa}</version>
         </dependency>
 
         <!-- mysql -->

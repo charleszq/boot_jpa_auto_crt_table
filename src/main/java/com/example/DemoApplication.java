@@ -26,22 +26,31 @@ public class DemoApplication extends SpringBootServletInitializer {
     }
 
     @Bean
-    public CXFNonSpringJaxrsServlet odataServiceDispatcherServlet() {
-        return new CXFNonSpringJaxrsServlet();
-    }
-
-    @Bean
     public DispatcherServlet springDispatcherServlet() {
         return new DispatcherServlet();
     }
 
     @Bean
+    public ServletRegistrationBean dispatcherJPAServletRegistration() {
+        ServletRegistrationBean registration = new ServletRegistrationBean(new CXFNonSpringJaxrsServlet(), "/jpa.svc/*");
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("javax.ws.rs.Application", "org.apache.olingo.odata2.core.rest.app.ODataApplication");
+        params.put("org.apache.olingo.odata2.service.factory", "com.example.service.MyODataJPAServiceFactory");
+        registration.setInitParameters(params);
+        registration.setLoadOnStartup(1);
+        registration.setName("odatajpa");
+        return registration;
+    }
+
+    @Bean
     public ServletRegistrationBean dispatcherServletRegistration() {
-        ServletRegistrationBean registration = new ServletRegistrationBean(odataServiceDispatcherServlet(), "/sampleodata2/*");
+        ServletRegistrationBean registration = new ServletRegistrationBean(new CXFNonSpringJaxrsServlet(), "/odata.svc/*");
         Map<String, String> params = new HashMap<String, String>();
         params.put("javax.ws.rs.Application", "org.apache.olingo.odata2.core.rest.app.ODataApplication");
         params.put("org.apache.olingo.odata2.service.factory", "com.example.service.MyServiceFactory");
         registration.setInitParameters(params);
+        registration.setLoadOnStartup(1);
+        registration.setName("odata");
         return registration;
     }
 
@@ -49,6 +58,7 @@ public class DemoApplication extends SpringBootServletInitializer {
     public ServletRegistrationBean springDispatcherServletRegistration() {
         ServletRegistrationBean springServletBean = new ServletRegistrationBean(springDispatcherServlet(), "/rest/*");
         springServletBean.setLoadOnStartup(1);
+        springServletBean.setName("rest");
         return springServletBean;
     }
 }
